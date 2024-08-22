@@ -25,7 +25,7 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="../../../../app/TP1/views/ejercicio1/ejercicio1.php">Ejercicio 1</a></li>
-                            <li><a class="dropdown-item" href="#">Ejercicio 2</a></li>
+                            <li><a class="dropdown-item" href="../../../../app/TP1/views/ejercicio2/ejercicio2.php">Ejercicio 2</a></li>
                             <li><a class="dropdown-item" href="#">Ejercicio 3</a></li>
                         </ul>
                     </li>

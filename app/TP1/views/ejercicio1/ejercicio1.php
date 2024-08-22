@@ -8,9 +8,12 @@ include_once("../assets/structure.php");
             <p>Verificar si el numero ingresado es 0, positivo o negativo.</p>
         </div>
         <div class="card-body">
-            <form name="ejercicio1" method="post" action="action.php">
+            <form name="ejercicio1" method="post" action="action.php" class="needs-validation" novalidate>
                 <div class="mb-3">
                     <input type="number" class="form-control" name="numero" id="numero" placeholder="Ingresa un número..." required>
+                    <div class="invalid-feedback">
+                        Por favor, ingresa un número.
+                    </div>
                 </div>
                 <button type="submit" class="btn btn-warning">Enviar</button>
             </form>
@@ -18,7 +21,7 @@ include_once("../assets/structure.php");
     </div>
 </div>
 
-
+<script src="../assets/js/validate.js"></script>
 <!-- 
     tp1 ejercicio 1
     Confeccionar un formulario que solicite un número. Al pulsar el botón de enviar debe 

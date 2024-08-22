@@ -6,7 +6,7 @@ class EstudiosSexo
      * Recibe datos, retorna cadena de string con ellos
      * @param string $nombre
      * @param string $apellido
-     * @param string $edad
+     * @param int $edad
      * @param string $estudios
      * @param string $sexo
      * @return string

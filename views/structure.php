@@ -13,7 +13,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark border-bottom border-body" data-bs-theme="dark"">
       <div class=" container-fluid">
-            <a class="navbar-brand" href="#">P.W.D</a>
+            <a class="navbar-brand" href="../../PWD/index.php">P.W.D</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -25,8 +25,13 @@
                         </a>
                         <ul class="dropdown-menu">
                             <li><a class="dropdown-item" href="../../PWD/app/TP1/views/ejercicio1/ejercicio1.php">Ejercicio 1</a></li>
-                            <li><a class="dropdown-item" href="#">Ejercicio 2</a></li>
-                            <li><a class="dropdown-item" href="#">Ejercicio 3</a></li>
+                            <li><a class="dropdown-item" href="../../PWD/app/TP1/views/ejercicio2/ejercicio2.php">Ejercicio 2</a></li>
+                            <li><a class="dropdown-item" href="../../PWD/app/TP1/views/ejercicio3/ejercicio3.php">Ejercicio 3</a></li>
+                            <li><a class="dropdown-item" href="../../PWD/app/TP1/views/ejercicio4/ejercicio4.php">Ejercicio 4</a></li>
+                            <li><a class="dropdown-item" href="../../PWD/app/TP1/views/ejercicio5/ejercicio5.php">Ejercicio 5</a></li>
+                            <li><a class="dropdown-item" href="../../PWD/app/TP1/views/ejercicio6/ejercicio6.php">Ejercicio 6</a></li>
+                            <li><a class="dropdown-item" href="../../PWD/app/TP1/views/ejercicio7/ejercicio7.php">Ejercicio 7</a></li>
+                            <li><a class="dropdown-item" href="../../PWD/app/TP1/views/ejercicio8/ejercicio8.php">Ejercicio 8</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -59,7 +64,7 @@
         <nav class="navbar fixed-bottom bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark"">
       <div class=" container-fluid">
             <span class="navbar-text">
-                MARTÍN HERNANDEZ
+                Entrega de TPs - Grupo 16
             </span>
             <span class="navbar-text">
                 PROGRAMACIÓN WEB DINÁMICA

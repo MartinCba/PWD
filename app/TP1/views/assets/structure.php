@@ -13,7 +13,7 @@
     <header>
         <nav class="navbar navbar-expand-lg bg-body-tertiary navbar bg-dark border-bottom border-body" data-bs-theme="dark"">
       <div class=" container-fluid">
-            <a class="navbar-brand" href="#">P.W.D</a>
+            <a class="navbar-brand" href="../../../../index.php">P.W.D</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -64,7 +64,7 @@
         <nav class="navbar fixed-bottom bg-body-tertiary bg-dark border-bottom border-body" data-bs-theme="dark"">
       <div class=" container-fluid">
             <span class="navbar-text">
-                MARTÍN HERNANDEZ
+                Entrega de TPs - Grupo 16
             </span>
             <span class="navbar-text">
                 PROGRAMACIÓN WEB DINÁMICA

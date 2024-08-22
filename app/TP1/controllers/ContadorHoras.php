@@ -5,7 +5,11 @@ class ContadorHoras
 
     /**
      * Recibe horas, retorna la suma de todas ellas
-     * @param int $lunes
+     * @param int $lun
+     * @param int $mar
+     * @param int $mie
+     * @param int $jue
+     * @param int $vie
      * @return string
      */
     public function sumarHoras($lun, $mar, $mie, $jue, $vie)

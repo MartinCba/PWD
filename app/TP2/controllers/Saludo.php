@@ -2,6 +2,7 @@
 class Saludo
 {
     public function __construct(){}
+
     /**
      * Recibe datos personales, retorna string con un saludo
      * @param string $nombre

@@ -57,9 +57,9 @@
                             Trabajo Práctico 3
                         </a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Ejercicio 1</a></li>
-                            <li><a class="dropdown-item" href="#">Ejercicio 2</a></li>
-                            <li><a class="dropdown-item" href="#">Ejercicio 3</a></li>
+                            <li><a class="dropdown-item" href="../../PWD/app/TP3/views/ejercicio1/ejercicio1.php">Ejercicio 1</a></li>
+                            <li><a class="dropdown-item" href="../../PWD/app/TP3/views/ejercicio2/ejercicio2.php">Ejercicio 2</a></li>
+                            <li><a class="dropdown-item" href="../../PWD/app/TP3/views/ejercicio3/ejercicio3.php">Ejercicio 3</a></li>
                         </ul>
                     </li>
                 </ul>

@@ -10,9 +10,9 @@ include_once("./views/structure.php");
 
             <div class="mb-3">
                 <H3>Entrega de TPs - Grupo 16</H3><br>
-                <p class="alert alert-warning">Martín Hernandez</p>
-                <p class="alert alert-warning">German Metzger</p>
-                <p class="alert alert-warning">Martín Villegas</p>
+                <h5 class="alert alert-warning">Martín Hernandez</h5>
+                <h5 class="alert alert-warning">German Metzger</h5>
+                <h5 class="alert alert-warning">Martín Villegas</h5>
             </div>
 
         </div>

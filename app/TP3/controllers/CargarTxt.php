@@ -10,7 +10,7 @@ class CargarTxt
     function analizar($nombre)
     {
         $mystring = $nombre;
-        $encontrar   = '.jpg';
+        $encontrar   = '.txt';
         $pos = strpos($mystring, $encontrar);
 
         //controlar formatos

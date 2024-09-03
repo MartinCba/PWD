@@ -5,24 +5,20 @@ class ContadorHoras
 
     /**
      * Recibe horas, retorna la suma de todas ellas
-     * @param int $lun
-     * @param int $mar
-     * @param int $mie
-     * @param int $jue
-     * @param int $vie
+     * @param array $datos
      * @return string
      */
-    public function sumarHoras($lun, $mar, $mie, $jue, $vie)
+    public function sumarHoras($datos)
     {
-        $lunes = $lun;
-        $martes = $mar;
-        $miercoles = $mie;
-        $jueves = $jue;
-        $viernes = $vie;
+        $lunes = $datos["lunes"];
+        $martes = $datos["martes"];
+        $miercoles = $datos["miercoles"];
+        $jueves = $datos["jueves"];
+        $viernes = $datos["viernes"];
 
         $total = $lunes + $martes + $miercoles + $jueves + $viernes;
 
-        $msj = "Vas a cursar " . $total. "hs semanales.";
+        $msj = "Vas a cursar " . $total . "hs semanales.";
 
         return $msj;
     }

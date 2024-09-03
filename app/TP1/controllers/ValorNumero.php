@@ -6,11 +6,12 @@ class ValorNumero
 
     /**
      * Recibe un número, retorna si es positivo, negativo o igual a 0
-     * @param int $num
+     * @param array $data
      * @return string
      */
-    public function validarNumero($num)
+    public function validarNumero($data)
     {
+        $num = $data["numero"];
         if ($num > 0) {
             return "El número ingresado es positivo.";
         } elseif ($num < 0) {

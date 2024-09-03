@@ -12,15 +12,13 @@
 <body>
     <?php
     include_once("../assets/structure/header.php");
+    include_once("../../utils/functions.php");
     include_once("../../controllers/Saludo.php");
 
-    $nombre = $_POST["nombre"];
-    $apellido = $_POST["apellido"];
-    $edad = $_POST["edad"];
-    $direccion = $_POST["direccion"];
+    $datos = dataSubmitted();
 
     $obj = new Saludo();
-    $valor = $obj->saludar($nombre, $apellido, $edad, $direccion);
+    $valor = $obj->saludar($datos);
     ?>
 
     <div class="container card-container d-flex justify-content-center align-items-center" style="height: 80vh">

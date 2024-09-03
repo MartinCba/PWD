@@ -13,14 +13,26 @@
     <?php
     include_once("../assets/structure/header.php");
     include_once("../../controllers/MayorEdad.php");
+    include_once("../../utils/functions.php");
 
-    $nombre = $_GET["nombre"];
-    $apellido = $_GET["apellido"];
-    $edad = $_GET["edad"];
+    $datos = dataSubmitted();
+    function mensaje($datos, $valor)
+    {
+        $nombre = $datos["nombre"];
+        $apellido = $datos["apellido"];
+        $edad = $datos["edad"];
 
+        if ($valor) {
+            $textoEdad = "</br>Es mayor de edad";
+        } else {
+            $textoEdad = "</br>Es menor de edad";
+        }
+        $msj = "Nombre: " . $nombre . "</br>Apellido: " . $apellido . "</br>Edad: " . $edad . "</br>" . $textoEdad . "</br>";
+        return $msj;
+    }
 
     $obj = new MayorEdad();
-    $valor = $obj->esMayor($nombre, $apellido, $edad);
+    $valor = $obj->esMayor($datos);
     ?>
 
     <div class="container card-container d-flex justify-content-center align-items-center" style="height: 80vh">
@@ -31,7 +43,7 @@
             <div class="card-body">
                 <form name="ejercicio1" method="post" action="action.php">
                     <div class="mb-3">
-                        <p><?php echo $valor ?></p>
+                        <p><?php echo mensaje($datos, $valor) ?></p>
                     </div>
                     <a class="btn btn-warning" href="ejercicio4.php">Volver</a>
                 </form>

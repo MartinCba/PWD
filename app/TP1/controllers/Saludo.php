@@ -1,17 +1,19 @@
 <?php
 class Saludo
 {
-    public function __construct(){}
+    public function __construct() {}
     /**
      * Recibe datos personales, retorna string con un saludo
-     * @param string $nombre
-     * @param string $apellido
-     * @param int $edad
-     * @param string $direccion
+     * @param array $datos
      * @return string
      */
-    public function saludar($nombre, $apellido, $edad, $direccion)
+    public function saludar($datos)
     {
+        $nombre = $datos["nombre"];
+        $apellido = $datos["apellido"];
+        $edad = $datos["edad"];
+        $direccion = $datos["direccion"];
+
         $msj = "Hola, yo soy " . $nombre . " " . $apellido . ", tengo " . $edad . " años y vivo en " . $direccion;
 
         return $msj;

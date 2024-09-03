@@ -4,10 +4,7 @@ class Deportes
     public function __construct() {}
     /**
      * Recibe datos, retorna cadena de string con ellos
-     * @param string $nombre
-     * @param string $apellido
-     * @param int $edad
-     * @param string $deportesTexto
+     * @param array $datos
      * @return string
      */
     public function mostrarDeportes($nombre, $apellido, $edad, $deportesTexto)

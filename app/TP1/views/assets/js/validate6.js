@@ -39,18 +39,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return input.checked;
       });
 
-      if (!isSportSelected) {
-        isValid = false;
-        sportsInputs.forEach(function (input) {
-          input.classList.add("is-invalid"); // Marca los campos como inválidos
-        });
-        alert("Por favor, seleccioná al menos un deporte."); // Muestra un mensaje de alerta
-      } else {
-        sportsInputs.forEach(function (input) {
-          input.classList.remove("is-invalid"); // Elimina la marca si el campo es válido
-        });
-      }
-
       // Si algún campo es inválido, evita el envío del formulario
       if (!isValid) {
         event.preventDefault();

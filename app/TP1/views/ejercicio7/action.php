@@ -13,14 +13,13 @@
     <?php
     include_once("../assets/structure/header.php");
     include_once("../../controllers/calculador.php");
+    include_once("../../utils/functions.php");
 
-    $num1 = $_GET["num1"];
-    $num2 = $_GET["num2"];
-    $operacion = $_GET["operacion"];
+    $datos = dataSubmitted();
 
 
     $obj = new Calculador();
-    $valor = $obj->calcular($num1, $num2, $operacion);
+    $valor = $obj->calcular($datos);
     ?>
 
     <div class="container card-container d-flex justify-content-center align-items-center" style="height: 80vh">

@@ -3,14 +3,28 @@ class Deportes
 {
     public function __construct() {}
     /**
-     * Recibe datos, retorna cadena de string con ellos
+     * Controla que sea mayor de edad y verifica si practica algun deporte
      * @param array $datos
      * @return string
      */
-    public function mostrarDeportes($nombre, $apellido, $edad, $deportesTexto)
+    public function mostrarDeportes($datos)
     {
-        $msj = "Nombre: " . $nombre . "</br>Apellido: " . $apellido . "</br>Edad: " . $edad . "</br>Practica: " . $deportesTexto;
+        $edad = $datos['edad'];
 
-        return $msj;
+        if ($edad >= 18) {
+            $datos['mensajeEdad'] = "Es mayor de edad";
+        } else {
+            $datos['mensajeEdad'] = "Es menor de edad";
+        }
+
+        if (isset($datos['deportes'])) {
+            $colDeportes = $datos['deportes'];
+            $cadena = implode(", ", $colDeportes);
+            $datos['deportes'] = "Practica: " . $cadena;
+        } else {
+            $datos['deportes'] = "No practica ningún deporte";
+        }
+
+        return $datos;
     }
 }

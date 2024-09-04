@@ -25,13 +25,6 @@ $(document).ready(function () {
       $("#edad").addClass("is-valid");
     }
 
-    // Validar selección de deportes
-    if ($('input[name="deportes[]"]:checked').length === 0) {
-      isValid = false;
-      $(".invalid-feedback").show();
-    } else {
-      $(".invalid-feedback").hide();
-    }
 
     // Si algún campo no es válido, prevenir el envío
     if (!isValid) {

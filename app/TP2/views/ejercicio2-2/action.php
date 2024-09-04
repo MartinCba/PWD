@@ -13,14 +13,11 @@
     <?php
     include_once("../assets/structure/header.php");
     include_once("../../controllers/ContadorHoras.php");
+    include_once("../../utils/functions.php");
 
-    $lun = $_GET["lunes"];
-    $mar = $_GET["martes"];
-    $mie = $_GET["miercoles"];
-    $jue = $_GET["jueves"];
-    $vie = $_GET["viernes"];
+    $datos = dataSubmitted();
     $obj = new ContadorHoras();
-    $valor = $obj->sumarHoras($lun, $mar, $mie, $jue, $vie);
+    $valor = $obj->sumarHoras($datos);
     ?>
 
     <div class="container card-container d-flex justify-content-center align-items-center" style="height: 80vh">

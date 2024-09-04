@@ -13,13 +13,11 @@
     <?php
     include_once("../assets/structure/header.php");
     include_once("../../controllers/ValorEntrada.php");
+    include_once("../../utils/functions.php");
 
-    $edad = $_GET["edad"];
-    $estudia = $_GET["estudia"];
-
-
+    $datos = dataSubmitted();
     $obj = new ValorEntrada();
-    $valor = $obj->calcular($edad, $estudia);
+    $valor = $obj->calcular($datos);
     ?>
 
     <div class="container card-container d-flex justify-content-center align-items-center" style="height: 80vh">

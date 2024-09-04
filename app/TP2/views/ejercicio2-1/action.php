@@ -13,10 +13,11 @@
     <?php
     include_once("../assets/structure/header.php");
     include_once("../../controllers/ValorNumero.php");
+    include_once("../../utils/functions.php");
 
-    $num = $_POST["numero"];
-    $obj = new ValorNumero($num);
-    $valor = $obj->validarNumero($num);
+    $datos = dataSubmitted();
+    $obj = new ValorNumero();
+    $valor = $obj->validarNumero($datos);
     ?>
 
     <div class="container card-container d-flex justify-content-center align-items-center" style="height: 80vh">

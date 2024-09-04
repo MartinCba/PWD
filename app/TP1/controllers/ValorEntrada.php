@@ -5,18 +5,19 @@ class ValorEntrada
 
     /**
      * Recibe datos, retorna monto de tarifa
-     * @param int $edad
-     * @param string $estudia
+     * @param array $datos
      * @return mixed
      */
-    public function calcular($edad, $estudia)
+    public function calcular($datos)
     {
+        $edad = $datos['edad'];
+        $estudia = $datos['estudia'];
         $tarifa = 300;
         if ($estudia == "si" && $edad < 12) {
             $tarifa = 160;
         } elseif ($estudia == "si" && $edad >= 12) {
             $tarifa = 180;
-        } elseif ($edad <12) {
+        } elseif ($edad < 12) {
             $tarifa = 160;
         }
         return $tarifa;

@@ -13,13 +13,13 @@
     <?php
     include_once("../assets/structure/header.php");
     include_once("../../controllers/Login.php");
+    include_once("../../utils/functions.php");
 
-    $usuario = $_POST["usuario"];
-    $password = $_POST["password"];
+    $datos = dataSubmitted();
 
 
     $obj = new Login();
-    $valor = $obj->verificar($usuario, $password);
+    $valor = $obj->verificar($datos);
     ?>
 
     <div class="container card-container d-flex justify-content-center align-items-center" style="height: 80vh">

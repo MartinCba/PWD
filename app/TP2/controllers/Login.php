@@ -6,9 +6,11 @@ class Login
      * Recibe datos, verifica si el usuario y contraseña coinciden con
      * una cuenta real
      */
-    public function verificar($usuario, $password)
+    public function verificar($datos)
     {
         $usuarios = [];
+        $usuario = $datos['usuario'];
+        $password = $datos['password'];
         $usuarios["user"] = ["pedro", "juan", "martin"];
         $usuarios["clave"] = ["Pedro1234", "Juan1234", "Martin1234"];
 

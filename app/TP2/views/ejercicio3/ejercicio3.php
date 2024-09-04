@@ -20,7 +20,7 @@
                 <p>Member Login:</p>
             </div>
             <div class="card-body">
-                <form name="ejercicio3" method="post" action="action.php" class="needs-validation" novalidate>
+                <form name="ejercicio3" method="post" action="action.php" class="needs-validation">
                     <div class="mb-3">
                         <input type="text" class="form-control" name="usuario" id="usuario" placeholder="Username..." required>
                         <div class="invalid-feedback">

@@ -1,11 +1,10 @@
 $(document).ready(function () {
   $("#loginForm").on("submit", function (event) {
-    // Evitar el envío del formulario
-    event.preventDefault();
+    // Inicializar variable para control de validación
+    let valid = true;
 
     // Limpiar mensajes de error previos
     $(".invalid-feedback").hide();
-    let valid = true;
 
     // Obtener valores de los campos
     let username = $("#usuario").val().trim();
@@ -13,34 +12,31 @@ $(document).ready(function () {
 
     // Validar usuario
     if (username === "") {
-      $("#usuario").siblings(".invalid-feedback").show();
+      $("#usuario").next(".invalid-feedback").text("Por favor, ingresá tu nombre de usuario.").show();
       valid = false;
     }
 
     // Validar contraseña
     if (password === "") {
-      $("#password").siblings(".invalid-feedback").eq(0).show();
+      $("#password").next(".invalid-feedback").text("Por favor, ingresá tu contraseña.").show();
       valid = false;
     } else if (password.length < 8) {
-      $("#passwordError")
-        .text("La contraseña debe tener al menos 8 caracteres.")
-        .show();
+      $("#password").next(".invalid-feedback").text("La contraseña debe tener al menos 8 caracteres.").show();
       valid = false;
     } else if (!/[a-zA-Z]/.test(password) || !/[0-9]/.test(password)) {
-      $("#passwordError")
-        .text("La contraseña debe contener letras y números.")
-        .show();
+      $("#password").next(".invalid-feedback").text("La contraseña debe contener letras y números.").show();
       valid = false;
     } else if (password === username) {
-      $("#passwordError")
-        .text("La contraseña no puede ser igual al nombre de usuario.")
-        .show();
+      $("#password").next(".invalid-feedback").text("La contraseña no puede ser igual al nombre de usuario.").show();
       valid = false;
     }
 
-    // Si todo es válido, enviar el formulario
-    if (valid) {
-      this.submit();
+    // Si el formulario no es válido, evitar el envío
+    if (!valid) {
+      event.preventDefault();
+    } else {
+      // Eliminar preventDefault y permitir el envío solo si es válido
+      return true;
     }
   });
 });

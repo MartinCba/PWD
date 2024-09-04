@@ -13,23 +13,44 @@
     <?php
     include_once("../assets/structure/header.php");
     include_once("../../controllers/DatosPeliculas.php");
+    include_once("../../utils/functions.php");
 
-    $titulo = $_POST["titulo"];
-    $actores = $_POST["actores"];
-    $director = $_POST["director"];
-    $guion = $_POST["guion"];
-    $produccion = $_POST["produccion"];
-    $anio = $_POST["anio"];
-    $nacionalidad = $_POST["nacionalidad"];
-    $genero = $_POST["genero"];
-    $duracion = $_POST["duracion"];
-    $edad = $_POST["edad"];
-    $sinopsis = $_POST["sinopsis"];
+    function mensaje()
+    {
+        $msj = "<h1>La película introducida es: </h1>";
+        return $msj;
+    }
+    function mostrarCartelera($datos)
+    {
+        $titulo = $datos["titulo"];
+        $actores = $datos["actores"];
+        $director = $datos["director"];
+        $guion = $datos["guion"];
+        $produccion = $datos["produccion"];
+        $anio = $datos["anio"];
+        $nacionalidad = $datos["nacionalidad"];
+        $genero = $datos["genero"];
+        $duracion = $datos["duracion"];
+        $edad = $datos["edad"];
+        $sinopsis = $datos["sinopsis"];
 
+        $msj = "<span class='texto'>Título: </span><span class='descripcion'>" . $titulo . "</span></br>
+        <span class='texto'>Actores: </span><span class='descripcion'>" . $actores . "</span></br>
+        <span class='texto'>Director: </span><span class='descripcion'>" . $director . "</span></br>
+        <span class='texto'>Guion: </span><span class='descripcion'>" . $guion . "</span></br>
+        <span class='texto'>Produccion: </span><span class='descripcion'>" . $produccion . "</span></br>
+        <span class='texto'>Año: </span><span class='descripcion'>" . $anio . "</span></br>
+        <span class='texto'>Nacionalidad: </span><span class='descripcion'>" . $nacionalidad . "</span></br>
+        <span class='texto'>Genero: </span><span class='descripcion'>" . $genero . "</span></br>
+        <span class='texto'>Duracion: </span><span class='descripcion'>" . $duracion . "</span></br>
+        <span class='texto'>Restricciones de Edad: </span><span class='descripcion'>" . $edad . "</span></br>
+        <span class='texto'>Sinopsis: </span><span class='descripcion'>" . $sinopsis . "</span></br>";
 
-    $obj = new DatosPeliculas();
-    $msj = $obj->mensaje();
-    $valor = $obj->mostrarCartelera($titulo, $actores, $director, $guion, $produccion, $anio, $nacionalidad, $genero, $duracion, $edad, $sinopsis);
+        return $msj;
+    }
+    $datos = dataSubmitted();
+    $msj = mensaje();
+    $valor = mostrarCartelera($datos);
     ?>
 
     <div class="container card-container d-flex justify-content-center align-items-center" style="height: 80vh">

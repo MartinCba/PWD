@@ -13,30 +13,73 @@
     <?php
     include_once("../assets/structure/header.php");
     include_once("../../controllers/MostrarPeliculas.php");
+    include_once("../../utils/functions.php");
 
-    $titulo = $_POST["titulo"];
-    $actores = $_POST["actores"];
-    $director = $_POST["director"];
-    $guion = $_POST["guion"];
-    $produccion = $_POST["produccion"];
-    $anio = $_POST["anio"];
-    $nacionalidad = $_POST["nacionalidad"];
-    $genero = $_POST["genero"];
-    $duracion = $_POST["duracion"];
-    $edad = $_POST["edad"];
-    $sinopsis = $_POST["sinopsis"];
-    $nombre = strtolower($_FILES['archivo']['name']);
-    $tamanio = $_FILES['archivo']["size"];
-    $dir = "../../files";
+    function analizar($nombre)
+    {
+        $mensaje = 0;
+        $mystring = $nombre;
+        $encontrar   = '.jpg';
+        $pos = strpos($mystring, $encontrar);
 
+        //controlar formatos
+        if ($pos === false) {
+            $mensaje = 0;
+        } else if (move_uploaded_file($_FILES['archivo']['tmp_name'], '../../files/' . $nombre)) {
+            $mensaje = 1;
+        }
+        return $mensaje;
+    }
+    function mensaje()
+    {
+        $msj = "<h1>La película introducida es: </h1>";
+        return $msj;
+    }
+    function mostrarCartelera($datos)
+    {
+        $titulo = $datos["titulo"];
+        $actores = $datos["actores"];
+        $director = $datos["director"];
+        $guion = $datos["guion"];
+        $produccion = $datos["produccion"];
+        $anio = $datos["anio"];
+        $nacionalidad = $datos["nacionalidad"];
+        $genero = $datos["genero"];
+        $duracion = $datos["duracion"];
+        $edad = $datos["edad"];
+        $sinopsis = $datos["sinopsis"];
+        $nombre = strtolower($_FILES['archivo']['name']);
+        $tamanio = $_FILES['archivo']["size"];
+        $dir = "../../files";
 
+        $fueCargado = analizar($nombre);
 
+        if ($fueCargado == false) {
+            $men = 'El archivo no puede ser cargado, revise que el formato sea PNG o JPG';
+        } else {
+            $men = "";
+        }
+        $msj = "
+        <img src='../../files/$nombre' height='100px' width='200px' border='1px' alt='Pelicula'/>
+        <br/>
+        <span class='texto'>Título: </span><span class='descripcion'>" . $titulo . "</span></br>
+        <span class='texto'>Actores: </span><span class='descripcion'>" . $actores . "</span></br>
+        <span class='texto'>Director: </span><span class='descripcion'>" . $director . "</span></br>
+        <span class='texto'>Guion: </span><span class='descripcion'>" . $guion . "</span></br>
+        <span class='texto'>Produccion: </span><span class='descripcion'>" . $produccion . "</span></br>
+        <span class='texto'>Año: </span><span class='descripcion'>" . $anio . "</span></br>
+        <span class='texto'>Nacionalidad: </span><span class='descripcion'>" . $nacionalidad . "</span></br>
+        <span class='texto'>Genero: </span><span class='descripcion'>" . $genero . "</span></br>
+        <span class='texto'>Duracion: </span><span class='descripcion'>" . $duracion . "</span></br>
+        <span class='texto'>Restricciones de Edad: </span><span class='descripcion'>" . $edad . "</span></br>
+        <span class='texto'>Sinopsis: </span><span class='descripcion'>" . $sinopsis . "</span></br>";
 
+        return $msj;
+    }
+    $datos = dataSubmitted();
+    $msj = mensaje();
+    $valor = mostrarCartelera($datos);
 
-    $obj = new MostrarPeliculas();
-    $msj = $obj->mensaje();
-    $valor = $obj->mostrarCartelera($nombre, $titulo, $actores, $director, $guion, $produccion, $anio, $nacionalidad, $genero, $duracion, $edad, $sinopsis);
-    $valor2 = $obj->analizar($nombre);
     ?>
 
     <div class="container card-container d-flex justify-content-center align-items-center" style="height: 80vh">

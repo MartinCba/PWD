@@ -14,13 +14,25 @@
     include_once("../assets/structure/header.php");
     include_once("../../controllers/CargarArchivo.php");
 
+    function mostrarMensaje($nombre, $valor)
+    {
+        if ($valor == 0) {
+            $mensaje = "<h3>Lo siento, solo se permiten archivos txt.</h3>\n";
+        } else {
+            $mensaje = "El archivo " . $nombre . " se ha subido con éxito <br />";
+            $mensaje .= '<div class = "textoCentrado" ><a href= "../../files/' . $nombre . '">Ver archivo</a></div>';
+        }
+
+        return $mensaje;
+    }
+
     $nombre = strtolower($_FILES['archivo']['name']);
     $tamanio = $_FILES['archivo']["size"];
     $dir = "../../files";
 
     $obj = new CargarArchivo();
     $valor = $obj->analizar($nombre, $tamanio, $dir);
-    $msj = $obj->mostrarMensaje($nombre, $valor);
+    $msj = mostrarMensaje($nombre, $valor);
 
     ?>
 

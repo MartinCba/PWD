@@ -22,23 +22,4 @@ class CargarArchivo
         }
         return $mensaje;
     }
-
-    /**
-     * Recibe nombre de un archivo y un entero, retorna mensaje de éxito o fracaso 
-     * sobre su respectiva subida
-     * @param string $nombreArchivo
-     * @param int $pudo
-     * @return string
-     */
-    public function mostrarMensaje($nombre, $valor)
-    {
-        if ($valor == 0) {
-            $mensaje = "<h3>Lo siento, solo se permiten archivos txt.</h3>\n";
-        } else {
-            $mensaje = "El archivo " . $nombre . " se ha subido con éxito <br />";
-            $mensaje .= '<div class = "textoCentrado" ><a href= "../../files/' . $nombre . '">Ver archivo</a></div>';
-        }
-
-        return $mensaje;
-    }
 }

@@ -14,13 +14,29 @@
     include_once("../assets/structure/header.php");
     include_once("../../controllers/CargarTxt.php");
 
+    function mostrarMensaje($nombre, $valor)
+    {
+        if ($valor == 0) {
+            $mensaje = "<h3>Lo siento, solo se permiten archivos txt.</h3>\n";
+        } else {
+            //Convertir el contenido en un textarea
+            $archivo = file_get_contents('../../files/' . $nombre);
+            $mensaje = "<div class='contenedorEnunciado'>
+                       <p>Este es el contenido de su archivo de texto cargado</p>
+                 </div>
+                 <textarea rows='20' cols='30'>$archivo</textarea>";
+        }
+
+        return $mensaje;
+    }
+
     $nombre = strtolower($_FILES['archivo']['name']);
     $tamanio = $_FILES['archivo']["size"];
     $dir = "../../files";
 
     $obj = new CargarTxt();
     $valor = $obj->analizar($nombre);
-    $msj = $obj->mostrarMensaje($nombre, $valor);
+    $msj = mostrarMensaje($nombre, $valor);
 
     ?>
 

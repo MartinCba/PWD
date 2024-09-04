@@ -21,27 +21,4 @@ class CargarTxt
         }
         return $mensaje;
     }
-
-    /**
-     * Recibe nombre de un archivo y un entero, retorna mensaje de éxito o fracaso 
-     * sobre su respectiva subida
-     * @param string $nombreArchivo
-     * @param int $pudo
-     * @return string
-     */
-    public function mostrarMensaje($nombre, $valor)
-    {
-        if ($valor == 0) {
-            $mensaje = "<h3>Lo siento, solo se permiten archivos txt.</h3>\n";
-        } else {
-            //Convertir el contenido en un textarea
-            $archivo = file_get_contents('../../files/' . $nombre);
-            $mensaje = "<div class='contenedorEnunciado'>
-                       <p>Este es el contenido de su archivo de texto cargado</p>
-                 </div>
-                 <textarea rows='20' cols='30'>$archivo</textarea>";
-        }
-
-        return $mensaje;
-    }
 }

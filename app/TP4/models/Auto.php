@@ -6,7 +6,7 @@ class Auto
     private $patente;
     private $marca;
     private $modelo;
-    private $objPersona;
+    private $Persona;
     private $msjOperacion;
 
     public function __construct()
@@ -15,7 +15,7 @@ class Auto
         $this->patente = "";
         $this->marca = "";
         $this->modelo = "";
-        $this->objPersona = null;
+        $this->Persona = null;
         $this->msjOperacion = "";
     }
 
@@ -25,15 +25,15 @@ class Auto
      * @param string $patente
      * @param string $marca
      * @param int $modelo
-     * @param Persona $objPersona
+     * @param Persona $Persona
      */
-    public function setear($patente, $marca, $modelo, $objPersona)
+    public function setear($patente, $marca, $modelo, $Persona)
     {
 
         $this->setPatente($patente);
         $this->setMarca($marca);
         $this->setModelo($modelo);
-        $this->setObjPersona($objPersona);
+        $this->setPersona($Persona);
     }
 
     // Getters and setters
@@ -68,13 +68,13 @@ class Auto
     /**
      * @return Persona
      */
-    public function getObjPersona()
+    public function getPersona()
     {
-        return $this->objPersona;
+        return $this->Persona;
     }
-    public function setObjPersona($objPersona)
+    public function setPersona($Persona)
     {
-        $this->objPersona = $objPersona;
+        $this->Persona = $Persona;
     }
 
     public function getMsjOperacion()
@@ -117,16 +117,16 @@ class Auto
                     esos valores al objeto Auto actual*/
                     $row = $base->Registro();
 
-                    $objPersona = new Persona();
+                    $Persona = new Persona();
 
                     if ($row['DniDuenio'] != "null") {
-                        $objPersona->setNroDni($row['DniDuenio']);
-                        $objPersona->cargar();
+                        $Persona->setNroDni($row['DniDuenio']);
+                        $Persona->cargar();
                     } else {
-                        $objPersona = null;
+                        $Persona = null;
                     }
 
-                    $this->setear($row['Patente'], $row['Marca'], $row['Modelo'], $objPersona);
+                    $this->setear($row['Patente'], $row['Marca'], $row['Modelo'], $Persona);
                     $exito = true;
                 }
             }
@@ -149,9 +149,9 @@ class Auto
         $resp = false;
         $base = new BaseDatos();
 
-        $objPersona = $this->getObjPersona();
-        if ($objPersona != null) {
-            $dniDuenio = $objPersona->getNroDni();
+        $Persona = $this->getPersona();
+        if ($Persona != null) {
+            $dniDuenio = $Persona->getNroDni();
         } else {
             $dniDuenio = null;
         }
@@ -189,9 +189,9 @@ class Auto
         $resp = false;
         $base = new BaseDatos();
 
-        $objPersona = $this->getObjPersona();
-        if ($objPersona != null) {
-            $dniDuenio = $objPersona->getNroDni();
+        $Persona = $this->getPersona();
+        if ($Persona != null) {
+            $dniDuenio = $Persona->getNroDni();
         } else {
             $dniDuenio = null;
         }
@@ -267,17 +267,17 @@ class Auto
 
                 while ($row = $base->Registro()) {
 
-                    $objPersona = new Persona();
+                    $Persona = new Persona();
 
                     if ($row['DniDuenio'] != "null") {
-                        $objPersona->setNroDni($row['DniDuenio']);
-                        $objPersona->cargar();
+                        $Persona->setNroDni($row['DniDuenio']);
+                        $Persona->cargar();
                     } else {
-                        $objPersona = null;
+                        $Persona = null;
                     }
 
                     $obj = new Auto();
-                    $obj->setear($row['Patente'], $row['Marca'], $row['Modelo'], $objPersona);
+                    $obj->setear($row['Patente'], $row['Marca'], $row['Modelo'], $Persona);
                     array_push($arreglo, $obj);
                 }
             }

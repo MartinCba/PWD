@@ -18,16 +18,13 @@
             <div class="card-header">
                 <h3>Ejercicio 1</h3>
                 <p style="text-align: left;">
-                    Crear la capa de los datos, implementando el ORM (Modelo de datos) para la base de datos
-                    entregada. Recordar que se debe generar al menos, un clase php por cada tabla. Cada clase debe contener
-                    las variables de instancia y sus metodos get y set; ademas de los metodos que nos permitan seleccionar,
-                    ingresar, modificar y eliminar los datos de cada tabla
-
+                    Crear la capa de control, que nos permitan acceder al ORM
+                    (Modelo de datos) y entregarle la informacion a las paginas de la interface.
                 </p>
             </div>
             <div class="card-body" style="display: flex; justify-content: space-around;">
-                <a href="https://github.com/MartinCba/PWD/blob/main/app/TP4/models/Auto.php" style="text-decoration: none; color: yellow;">Auto.php</a>
-                <a href="https://github.com/MartinCba/PWD/blob/main/app/TP4/models/Persona.php" style="text-decoration: none; color: yellow;">Persona.php</a>
+                <a href="https://github.com/MartinCba/PWD/blob/main/app/TP4/controllers/AutoAbm.php" style="text-decoration: none; color: yellow;">AutoAbm.php</a>
+                <a href="https://github.com/MartinCba/PWD/blob/main/app/TP4/controllers/PersonaAbm.php" style="text-decoration: none; color: yellow;">PersonaAbm.php</a>
             </div>
         </div>
     </div>
@@ -42,9 +39,7 @@
 </html>
 
 <!-- 
-    tp4 ejercicio 1
-    Crear la capa de los datos, implementando el ORM (Modelo de datos) para la base de datos
-    entregada. Recordar que se debe generar al menos, un clase php por cada tabla. Cada clase debe contener
-    las variables de instancia y sus metodos get y set; ademas de los metodos que nos permitan seleccionar,
-    ingresar, modificar y eliminar los datos de cada tabla. 
+    tp4 ejercicio 2
+    Crear la capa de control, que nos permitan acceder al ORM  
+    (Modelo de datos) y entregarle la informacion a las paginas de la interface.
 -->

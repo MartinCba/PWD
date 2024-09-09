@@ -2,7 +2,6 @@
 class BaseDatos extends PDO
 {
 
-    //ATRIBUTOS
     private $engine;
     private $host;
     private $database;
@@ -15,10 +14,6 @@ class BaseDatos extends PDO
     private $error;
     private $sql;
 
-    //CONSTRUCTOR
-    /**
-     * Crea un objeto de tipo BaseDatos y además realiza la conexión con el servidor directamente
-     */
     public function __construct()
     {
         $this->engine = 'mysql';
@@ -43,11 +38,7 @@ class BaseDatos extends PDO
     }
 
     /**
-     * Inicia la coneccion con el Servidor y la  Base Datos Mysql.
-     * Retorna true si la coneccion con el servidor se pudo establecer y false en caso contrario
-     * 
-     * OBSERVACIÓN: No incia la conexión con el servidor, solamente indica si la conexión se encuentra
-     * activa o no
+     * indica si la conexión se encuentra activa o no
      *
      * @return boolean
      */
@@ -71,9 +62,6 @@ class BaseDatos extends PDO
         return $this->debug;
     }
 
-    /**
-     * Funcion que setea la variable instancia error
-     */
     public function setError($e)
     {
         $this->error = $e;

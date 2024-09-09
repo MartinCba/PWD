@@ -17,18 +17,17 @@
         <div class="card text-center bg-dark text-light" style="width: 28rem;">
             <div class="card-header">
                 <h3>Ejercicio 1</h3>
-                <p>Crear la capa de los datos</p>
+                <p>
+                    Crear la capa de los datos, implementando el ORM (Modelo de datos) <br> para la base de datos<br>
+                    entregada. Recordar que se debe generar al menos,<br> un clase php por cada tabla. Cada clase debe contener<br>
+                    las variables de instancia y sus metodos get y set;<br> ademas de los metodos que nos permitan seleccionar,<br>
+                    ingresar, modificar y eliminar los datos de cada tabla
+
+                </p>
             </div>
-            <div class="card-body">
-                <form method="post" action="action.php" enctype="multipart/form-data">
-                    <div class="mb-3">
-                        <input type="file" class="form-control" name="archivo" id="archivo" required>
-                        <div class="invalid-feedback">
-                            Por favor, cargá el archivo .doc o .pdf.
-                        </div>
-                    </div>
-                    <button type="submit" class="btn btn-warning">Enviar</button>
-                </form>
+            <div class="card-body" style="display: flex; justify-content: space-around;">
+                <a href="https://github.com/MartinCba/PWD/blob/main/app/TP4/models/Auto.php" style="text-decoration: none; color: yellow;">Auto.php</a>
+                <a href="https://github.com/MartinCba/PWD/blob/main/app/TP4/models/Persona.php" style="text-decoration: none; color: yellow;">Persona.php</a>
             </div>
         </div>
     </div>

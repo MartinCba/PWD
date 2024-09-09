@@ -3,17 +3,12 @@
 class Auto
 {
 
-    //ATRIBUTOS
     private $patente;
     private $marca;
     private $modelo;
     private $objPersona;
     private $msjOperacion;
 
-    //CONSTRUCTOR
-    /**
-     * Crea un objeto de tipo Auto
-     */
     public function __construct()
     {
 
@@ -25,7 +20,7 @@ class Auto
     }
 
     /**
-     * Actualiza los atributos del objeto por los recibidos por parámetro
+     * Setea los atributos del objeto por los recibidos por parámetro
      * 
      * @param string $patente
      * @param string $marca
@@ -43,9 +38,6 @@ class Auto
 
     // Getters and setters
 
-    /**
-     * @return string
-     */
     public function getPatente()
     {
         return $this->patente;
@@ -55,9 +47,6 @@ class Auto
         $this->patente = $patente;
     }
 
-    /**
-     * @return string
-     */
     public function getMarca()
     {
         return $this->marca;
@@ -67,9 +56,6 @@ class Auto
         $this->marca = $marca;
     }
 
-    /**
-     * @return int
-     */
     public function getModelo()
     {
         return $this->modelo;
@@ -91,9 +77,6 @@ class Auto
         $this->objPersona = $objPersona;
     }
 
-    /**
-     * @return string
-     */
     public function getMsjOperacion()
     {
         return $this->msjOperacion;

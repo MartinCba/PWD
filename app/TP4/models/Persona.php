@@ -2,8 +2,6 @@
 
 class Persona
 {
-
-    //ATRIBUTOS
     private $nroDni;
     private $apellido;
     private $nombre;
@@ -12,10 +10,6 @@ class Persona
     private $domicilio;
     private $msjOperacion;
 
-    //CONSTRUCTOR
-    /**
-     * Crea un objeto de tipo Persona
-     */
     public function __construct()
     {
 
@@ -29,7 +23,7 @@ class Persona
     }
 
     /**
-     * Actualiza los atributos del objeto por los recibidos por parámetro
+     * Setea los atributos del objeto por los recibidos por parámetro
      * 
      * @param string $nroDni
      * @param string $apellido

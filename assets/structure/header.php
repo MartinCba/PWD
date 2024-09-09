@@ -54,6 +54,22 @@
                             <li><a class="dropdown-item" href="../../PWD/app/TP3/views/ejercicio3/ejercicio3.php">Ejercicio 3</a></li>
                         </ul>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            Trabajo Práctico 4
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../../PWD/app/TP4/views/ejercicio1/ejercicio1.php">Ejercicio 1</a></li>
+                            <li><a class="dropdown-item" href="../../PWD/app/TP4/views/ejercicio2/ejercicio2.php">Ejercicio 2</a></li>
+                            <li><a class="dropdown-item" href="../../PWD/app/TP4/views/ejercicio3/ejercicio3.php">Ejercicio 3</a></li>
+                            <li><a class="dropdown-item" href="../../PWD/app/TP4/views/ejercicio4/ejercicio4.php">Ejercicio 4</a></li>
+                            <li><a class="dropdown-item" href="../../PWD/app/TP4/views/ejercicio5/ejercicio5.php">Ejercicio 5</a></li>
+                            <li><a class="dropdown-item" href="../../PWD/app/TP4/views/ejercicio6/ejercicio6.php">Ejercicio 6</a></li>
+                            <li><a class="dropdown-item" href="../../PWD/app/TP4/views/ejercicio7/ejercicio7.php">Ejercicio 7</a></li>
+                            <li><a class="dropdown-item" href="../../PWD/app/TP4/views/ejercicio8/ejercicio8.php">Ejercicio 8</a></li>
+                            <li><a class="dropdown-item" href="../../PWD/app/TP4/views/ejercicio9/ejercicio9.php">Ejercicio 9</a></li>
+                        </ul>
+                    </li>
                 </ul>
             </div>
             </div>

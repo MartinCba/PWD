@@ -28,23 +28,23 @@
                 <h3>Ver Autos</h3>
                 <?php
                 if (is_array($arrayAutos) && count($arrayAutos) > 0) {
-                    echo "<div style='display: flex; justify-content: space-around;'><table>
-                <tr>
-                    <th style='color: yellow; padding: 30px'>Patente</th>
-                    <th style='color: yellow; padding: 30px'>Marca</th>
-                    <th style='color: yellow; padding: 30px'>Modelo</th>
-                    <th style='color: yellow; padding: 30px'>Dueño</th>
-                </tr>";
+                    echo "<table class='table table-striped'>
+                    <tr>
+                        <th>Patente</th>
+                        <th>Marca</th>
+                        <th>Modelo</th>
+                        <th>Dueño</th>
+                    </tr>";
                     foreach ($arrayAutos as $auto) {
                         $persona = $auto->getPersona();
-                        echo "<tr>
-                    <td>{$auto->getPatente()}</td>
-                    <td>{$auto->getMarca()}</td>
-                    <td>{$auto->getModelo()}</td>
-                    <td>{$persona->getNombre()} {$persona->getApellido()}</td>
-                </tr>";
+                        echo "<tr>";
+                        echo "<td>" . $auto->getPatente() . "</td>";
+                        echo "<td>" . $auto->getMarca() . "</td>";
+                        echo "<td>" . $auto->getModelo() . "</td>";
+                        echo "<td>" . $persona->getApellido() . " " . $persona->getNombre() . "</td>";
+                        echo "</tr>";
                     }
-                    echo "</table></div>";
+                    echo "</table>";
                 } else {
                     echo "<p>No hay ningun auto cargado...</p>";
                 }

@@ -143,7 +143,7 @@ class PersonaAbm
     /**
      * Permite buscar un objeto según distintos criterios
      * @param array $param
-     * @return boolean
+     * @return array
      */
     public function buscar($param)
     {

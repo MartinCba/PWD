@@ -38,34 +38,33 @@
             </div>
             <div class="card-body">
 
-                <div class="mb-3">
+                <table  class="table table-striped">
+                    <thead>
                     <?php
                     if ($hayAutos) {
-                        echo "<div style='display: flex; justify-content: space-around;'><table>
+                        echo "
                         <tr>
-                            <th style='color: yellow; padding: 30px'>Patente</th>
-                            <th style='color: yellow; padding: 30px'>Marca</th>
-                            <th style='color: yellow; padding: 30px'>Modelo</th>
-                            <th style='color: yellow; padding: 30px'>Dni</th>
-                            <th style='color: yellow; padding: 30px'>Apellido</th>
-                            <th style='color: yellow; padding: 30px'>Nombre</th>
-                        </tr>";
-                        echo 
-                        "<tr>
+                            <th>Patente</th>
+                            <th>Marca</th>
+                            <th>Modelo</th>
+                            <th>Dni</th>
+                            <th>Apellido</th>
+                            <th>Nombre</th>
+                        </tr></thead>";
+                        echo
+                        "<tbody>
                             <td>{$autoEncontrado->getPatente()}</td>
                             <td>{$autoEncontrado->getMarca()}</td>
                             <td>{$autoEncontrado->getModelo()}</td>
                             <td>{$duenio->getNroDni()}</td>
                             <td>{$duenio->getApellido()}</td>
                             <td>{$duenio->getNombre()}</td> 
-                        </tr>";
-                        echo "</table></div>";
-                    
+                        </tbody>";
                     } else {
                         echo "No se encontro la patente ingresada";
                     }
+                    echo "</table>";
                     ?>
-                </div>
                 <a class="btn btn-warning" href="ejercicio4.php">Volver</a>
 
             </div>
@@ -74,7 +73,8 @@
     <?php
     include_once("../assets/structure/footer.php");
     ?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script><script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 </body>
 
 </html>

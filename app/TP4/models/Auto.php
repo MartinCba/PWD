@@ -1,4 +1,6 @@
 <?php
+include_once("../../models/connector/BaseDatos.php");
+include_once "../../models/Persona.php";
 
 class Auto
 {

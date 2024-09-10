@@ -17,38 +17,36 @@
     include_once "../../models/Auto.php";
     include_once "../../controllers/PersonaAbm.php";
     include_once "../../controllers/AutoAbm.php";
-
     $autoAbm = new AutoAbm();
-    $param = null;
-
-    $arregloAutos = $autoAbm->buscar($param);
+    $parametros = null;
+    $arrayAutos = $autoAbm->buscar($parametros);
     ?>
+
     <div class="container card-container d-flex justify-content-center align-items-center" style="height: 80vh">
-        <div class="card text-center bg-dark text-light" style="width: 28rem;">
+        <div class="card text-center bg-dark text-light" style="width: 48rem;">
             <div class="card-header">
                 <h3>Ver Autos</h3>
                 <?php
-                if (is_array($arregloAutos) && count($arregloAutos) > 0) {
+                if (is_array($arrayAutos) && count($arrayAutos) > 0) {
                     echo "<div style='display: flex; justify-content: space-around;'><table>
-            <tr>
-                <th style='color: yellow;'>Patente</th>
-                <th style='color: yellow;'>Marca</th>
-                <th style='color: yellow;'>Modelo</th>
-                <th style='color: yellow;'>Dueño</th>
-            </tr>";
-                    foreach ($arregloAutos as $auto) {
+                <tr>
+                    <th style='color: yellow; padding: 30px'>Patente</th>
+                    <th style='color: yellow; padding: 30px'>Marca</th>
+                    <th style='color: yellow; padding: 30px'>Modelo</th>
+                    <th style='color: yellow; padding: 30px'>Dueño</th>
+                </tr>";
+                    foreach ($arrayAutos as $auto) {
                         $persona = $auto->getPersona();
-
                         echo "<tr>
-                <td>{$auto->getPatente()}</td>
-                <td>{$auto->getMarca()}</td>
-                <td>{$auto->getModelo()}</td>
-                <td>{$persona->getNombre()} {$persona->getApellido()}</td>
-            </tr>";
+                    <td>{$auto->getPatente()}</td>
+                    <td>{$auto->getMarca()}</td>
+                    <td>{$auto->getModelo()}</td>
+                    <td>{$persona->getNombre()} {$persona->getApellido()}</td>
+                </tr>";
                     }
                     echo "</table></div>";
                 } else {
-                    echo "<p>No hay autos cargados en la base de datos.</p>";
+                    echo "<p>No hay ningun auto cargado...</p>";
                 }
                 ?>
 
@@ -58,14 +56,14 @@
         include_once("../assets/structure/footer.php");
         ?>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-        <script src="../assets/js/jquery1.js"></script>
 </body>
 
 </html>
 
 <!-- 
-    tp4 ejercicio 2
-    Crear la capa de control, que nos permitan acceder al ORM  
-    (Modelo de datos) y entregarle la informacion a las paginas de la interface.
+    tp4 ejercicio 3
+    Crear una pagina php “VerAutos.php”, en ella usando la capa de control correspondiente
+    mostrar todos los datos de los autos que se encuentran cargados, de los dueños mostrar nombre y apellido.
+    En caso de que no se encuentre ningún auto cargado en la base mostrar un mensaje indicando que no hay
+    autos cargados.
 -->

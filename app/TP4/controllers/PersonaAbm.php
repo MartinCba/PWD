@@ -1,5 +1,8 @@
 <?php
-
+include_once("../../utils/functions.php");
+include_once("../../models/connector/BaseDatos.php");
+include_once "../../models/Persona.php";
+include_once "../../models/Auto.php";
 class PersonaAbm
 {
 

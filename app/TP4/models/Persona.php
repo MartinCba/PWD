@@ -1,5 +1,8 @@
 <?php
 
+include_once("../../models/connector/BaseDatos.php");
+include_once "../../models/Auto.php";
+
 class Persona
 {
     private $nroDni;

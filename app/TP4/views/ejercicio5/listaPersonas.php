@@ -18,9 +18,8 @@
     include_once "../../controllers/PersonaAbm.php";
     include_once "../../controllers/AutoAbm.php";
 
-    // Crear una instancia de PersonaAbm
+    
     $personaAbm = new PersonaAbm();
-
     // Obtener el listado de personas
     $personas = $personaAbm->buscar(null);
     ?>
@@ -29,7 +28,7 @@
         <div class="card text-center bg-dark text-light" style="width: 68rem;">
             <div class="card-header">
                 <h3>Lista de personas</h3>
-                <p>Acá va a ir el link autosPersona.php</p>
+                <a href="autosPersona.php" style="text-decoration: none; color: yellow;">Autos</a>
             </div>
             <div class="card-body">
                 <table class="table table-striped">
@@ -62,7 +61,6 @@
                         ?>
                     </tbody>
                 </table>
-                <a class="btn btn-warning" href="ejercicio4.php">Volver</a>
             </div>
         </div>
         <?php

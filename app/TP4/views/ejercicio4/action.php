@@ -65,7 +65,7 @@
                     }
                     echo "</table>";
                     ?>
-                <a class="btn btn-warning" href="ejercicio4.php">Volver</a>
+                <a class="btn btn-warning" href="buscarAuto.php">Volver</a>
 
             </div>
         </div>

@@ -1,5 +1,4 @@
 <?php
-include_once("../../utils/functions.php");
 include_once("../../models/connector/BaseDatos.php");
 include_once "../../models/Persona.php";
 include_once "../../models/Auto.php";
@@ -7,55 +6,52 @@ class PersonaAbm
 {
 
     /**
-     * Espera como parametro un arreglo asociativo donde las claves coinciden con los nombres 
+     * Recibe un arreglo asociativo donde las claves coinciden con los nombres 
      * de las variables instancias del objeto
-     * @param array $param
+     * @param array $parametros
      * @return Persona
      */
-    private function cargarObjeto($param)
+    private function cargarObjeto($parametros)
     {
-        $obj = null;
+        $objPersona = null;
 
         if (
-            array_key_exists('NroDni', $param) &&
-            array_key_exists('Apellido', $param) &&
-            array_key_exists('Nombre', $param) &&
-            array_key_exists('fechaNac', $param) &&
-            array_key_exists('Telefono', $param) &&
-            array_key_exists('Domicilio', $param)
+            array_key_exists('NroDni', $parametros) &&
+            array_key_exists('Apellido', $parametros) &&
+            array_key_exists('Nombre', $parametros) &&
+            array_key_exists('fechaNac', $parametros) &&
+            array_key_exists('Telefono', $parametros) &&
+            array_key_exists('Domicilio', $parametros)
         ) {
-            $obj = new Persona();
+            $objPersona = new Persona();
 
-            $obj->setear(
-                $param['NroDni'],
-                $param['Apellido'],
-                $param['Nombre'],
-                $param['fechaNac'],
-                $param['Telefono'],
-                $param['Domicilio']
+            $objPersona->setear(
+                $parametros['NroDni'],
+                $parametros['Apellido'],
+                $parametros['Nombre'],
+                $parametros['fechaNac'],
+                $parametros['Telefono'],
+                $parametros['Domicilio']
             );
         }
-        return $obj;
+        return $objPersona;
     }
 
     /**
-     * Espera como parametro un arreglo asociativo donde las claves coinciden con los nombres de las variables instancias del objeto que son claves
-     * 
-     * OBSERVACION: Se utiliza este método principalmente para borrar un registro, ya que para ello
-     * solamente se necesitan las claves del mismo
-     * 
+     * Recibe un arreglo asociativo donde las claves coinciden con los nombres
+     *  de las variables instancias del objeto que son claves
      * @param array $param
      * @return Persona
      */
-    private function cargarObjetoConClave($param)
+    private function cargarObjetoConClave($parametros)
     {
-        $obj = null;
+        $objPersona = null;
 
-        if (isset($param['NroDni'])) {
-            $obj = new Persona();
-            $obj->setear($param['NroDni'], null, null, null, null, null);
+        if (isset($parametros['NroDni'])) {
+            $objPersona = new Persona();
+            $objPersona->setear($parametros['NroDni'], null, null, null, null, null);
         }
-        return $obj;
+        return $objPersona;
     }
 
     /**

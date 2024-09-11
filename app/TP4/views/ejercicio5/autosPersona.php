@@ -27,7 +27,7 @@
                 <p>Ingrese el documento:</p>
             </div>
             <div class="card-body">
-                <form name="ejercicio4" method="post" action="action.php" class="needs-validation" novalidate>
+                <form name="ejercicio5" method="post" action="action.php" class="needs-validation" novalidate>
                     <div class="mb-3">
                         <input class="form-control" type="text"  pattern="[0-9]{8}" id="NroDni" name="NroDni" placeholder="30123456" maxlength="8" required>
                         <div class="invalid-feedback">

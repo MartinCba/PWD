@@ -67,7 +67,7 @@
                             <li><a class="dropdown-item" href="../../PWD/app/TP4/views/ejercicio6/nuevaPersona.php">Ejercicio 6</a></li>
                             <li><a class="dropdown-item" href="../../PWD/app/TP4/views/ejercicio7/nuevoAuto.php">Ejercicio 7</a></li>
                             <li><a class="dropdown-item" href="../../PWD/app/TP4/views/ejercicio8/cambioDuenio.php">Ejercicio 8</a></li>
-                            <li><a class="dropdown-item" href="../../PWD/app/TP4/views/ejercicio9/ejercicio9.php">Ejercicio 9</a></li>
+                            <li><a class="dropdown-item" href="../../PWD/app/TP4/views/ejercicio9/buscarPersona.php">Ejercicio 9</a></li>
                         </ul>
                     </li>
                 </ul>

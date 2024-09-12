@@ -25,3 +25,28 @@ function dataSubmitted()
     }
     return $data;
 }
+spl_autoload_register(function ($class_name) {
+    $tps = array(
+        $_SESSION['ROOT'] . 'TP1/',
+        $_SESSION['ROOT'] . 'TP2/',
+        $_SESSION['ROOT'] . 'TP3/',
+        $_SESSION['ROOT'] . 'TP4/'
+    );
+
+    $directories = array(
+        'controllers/',
+        'models/',
+        'models/connector/',
+        'utils/'
+    );
+
+    foreach ($tps as $tp) {
+        foreach ($directories as $directory) {
+            $file = $tp . $directory . $class_name . '.php';
+            if (file_exists($file)) {
+                require_once($file);
+                return;
+            }
+        }
+    }
+});

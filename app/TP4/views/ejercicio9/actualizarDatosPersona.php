@@ -25,12 +25,12 @@
     $listaPersonas = $persona->buscar($dni);
     if (count($listaPersonas) == 1) {
         if ($persona->modificacion($datos)) {
-            $msj = "Datos modificados correctamente";
+            $msj = "<p class='lead text-success'>Datos modificados correctamente!</p>";
         } else {
-            $msj = "No se modificaron datos.";
+            $msj = "<p class='lead text-danger'>No se modificaron los datos.</p>";
         }
     } else {
-        $msj = "El DNI ingresado no existe en la base de datos";
+        $msj = "<p class='lead text-danger'>El DNI ingresado no existe en la base de datos!</p>";
     }
     ?>
 

@@ -11,9 +11,8 @@
 
 <body>
     <?php
-    include_once("../assets/structure/header.php");
-    include_once("../../controllers/calculador.php");
     include_once("../../utils/functions.php");
+    include_once("../assets/structure/header.php");
 
     $datos = dataSubmitted();
 

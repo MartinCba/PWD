@@ -11,13 +11,8 @@
 
 <body>
     <?php
-    include_once("../assets/structure/header.php");
     include_once("../../utils/functions.php");
-    include_once("../../models/connector/BaseDatos.php");
-    include_once "../../models/Persona.php";
-    include_once "../../models/Auto.php";
-    include_once "../../controllers/PersonaAbm.php";
-    include_once "../../controllers/AutoAbm.php";
+    include_once("../assets/structure/header.php");
 
     $datos = dataSubmitted();
 

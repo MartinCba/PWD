@@ -1,4 +1,5 @@
 <?php
+include_once($_SESSION['ROOT'] . 'app/TP4/utils/functions.php');
 class BaseDatos extends PDO
 {
 

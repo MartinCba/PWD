@@ -1,7 +1,6 @@
 <?php
 
-include_once("../../models/connector/BaseDatos.php");
-include_once "../../models/Auto.php";
+include_once($_SESSION['ROOT'] . 'app/TP4/utils/functions.php');
 
 class Persona
 {

@@ -12,7 +12,7 @@
 <body>
     <?php
     include_once("../../utils/functions.php");
-
+    include_once("../assets/structure/header.php");
 
     $datos = dataSubmitted();
     $obj = new ValorNumero();

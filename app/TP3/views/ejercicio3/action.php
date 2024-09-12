@@ -11,9 +11,8 @@
 
 <body>
     <?php
-    include_once("../assets/structure/header.php");
-    include_once("../../controllers/MostrarPeliculas.php");
     include_once("../../utils/functions.php");
+    include_once("../assets/structure/header.php");
 
     function analizar($nombre)
     {

@@ -208,7 +208,7 @@ class Persona
         $resp = false;
         $base = new BaseDatos();
 
-        $sql = "UPDATE auto SET 
+        $sql = "UPDATE persona SET 
         NroDni = '" . $this->getNroDni() . "', 
         Apellido = '" . $this->getApellido() . "', 
         Nombre = '" . $this->getNombre() . "', 

@@ -51,6 +51,53 @@ class PersonaAbm
         }
         return $objPersona;
     }
+    /**
+     * Obtiene los datos de una persona por DNI
+     * @param string $dni
+     * @return array|null
+     */
+    public function obtenerDatosPersonaPorDni($dni)
+    {
+        $parametro['NroDni'] = $dni;
+        $info = $this->buscar($parametro);
+
+        if (count($info) > 0) {
+            $personaEncontrada = $info[0];
+            return [
+                'dni' => $personaEncontrada->getNroDni(),
+                'apellido' => $personaEncontrada->getApellido(),
+                'nombre' => $personaEncontrada->getNombre(),
+                'fechaNacimiento' => $personaEncontrada->getFechaNac(),
+                'telefono' => $personaEncontrada->getTelefono(),
+                'domicilio' => $personaEncontrada->getDomicilio()
+            ];
+        }
+
+        return null;
+    }
+
+    /**
+     * Obtiene la lista de todas las personas
+     * @return array
+     */
+    public function obtenerListaPersonas()
+    {
+        $info = $this->buscar(null);
+        $listaPersonas = [];
+
+        foreach ($info as $persona) {
+            $listaPersonas[] = [
+                'dni' => $persona->getNroDni(),
+                'apellido' => $persona->getApellido(),
+                'nombre' => $persona->getNombre(),
+                'fechaNacimiento' => $persona->getFechaNac(),
+                'telefono' => $persona->getTelefono(),
+                'domicilio' => $persona->getDomicilio()
+            ];
+        }
+
+        return $listaPersonas;
+    }
 
     /**
      * Corrobora que dentro del arreglo asociativo estan seteados los campos claves
@@ -85,6 +132,22 @@ class PersonaAbm
             $resp = true;
         }
         return $resp;
+    }
+    /**
+     * Obtiene los datos de una persona por su objeto
+     * @param object $persona
+     * @return array
+     */
+    public function obtenerDatosPersona($persona)
+    {
+        return [
+            'dni' => $persona->getNroDni(),
+            'apellido' => $persona->getApellido(),
+            'nombre' => $persona->getNombre(),
+            'fechaNacimiento' => $persona->getFechaNac(),
+            'telefono' => $persona->getTelefono(),
+            'domicilio' => $persona->getDomicilio()
+        ];
     }
 
     /**

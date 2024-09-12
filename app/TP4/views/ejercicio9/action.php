@@ -13,11 +13,15 @@
     <?php
     include_once("../../utils/functions.php");
     include_once("../assets/structure/header.php");
-    
+
     $datos = dataSubmitted();
-    $persona = new PersonaAbm();
-    $listaPersona = $persona->buscar($datos);
+    $personaAbm = new PersonaAbm();
+    $listaPersona = $personaAbm->buscar($datos);
     $cantidad = count($listaPersona);
+
+    if ($cantidad > 0) {
+        $datosPersona = $personaAbm->obtenerDatosPersona($listaPersona[0]);
+    }
     ?>
 
     <div class="container card-container d-flex justify-content-center align-items-center" style="height: 80vh">
@@ -36,46 +40,45 @@
 
                         echo "<div class='col-md-6'>";
                         echo "<label for='NroDni' class='form-label'>DNI:</label>";
-                        echo "<input class='form-control' type='text'  id='NroDni' name='NroDni'  value=" . $listaPersona[0]->getNroDni() . " placeholder='30123456...' pattern='[0-9]{8}' maxlength='8' style='color: green;' required readonly>";
+                        echo "<input class='form-control' type='text'  id='NroDni' name='NroDni'  value=" . $datosPersona['dni'] . " placeholder='30123456...' pattern='[0-9]{8}' maxlength='8' style='color: green;' required readonly>";
                         echo " <div class='invalid-feedback'>
                                     Ingrese un DNI, sin espacios y sin puntos.
                                 </div></div>";
 
                         echo "<div class='col-md-6'>";
                         echo "<label for='Apellido' class='form-label'>Apellido:</label>";
-                        echo "<input class='form-control' type='text' value=" . $listaPersona[0]->getApellido() . " id='Apellido' name='Apellido' pattern='([a-zA-Z]{1,20})' placeholder='Apellido...' required>";
+                        echo "<input class='form-control' type='text' value=" . $datosPersona['apellido'] . " id='Apellido' name='Apellido' pattern='([a-zA-Z]{1,20})' placeholder='Apellido...' required>";
                         echo "  <div class='invalid-feedback'>
                                     Debe ingresar un apellido.
                                 </div></div>";
 
                         echo "<div class='col-md-6'>";
                         echo "<label for='Nombre' class='form-label'>Nombre:</label>";
-                        echo "<input class='form-control' type='text' value=" . $listaPersona[0]->getNombre() . "  id='Nombre' name='Nombre' pattern='([a-zA-Z]{1,20})' placeholder='Nombre...' required>";
+                        echo "<input class='form-control' type='text' value=" . $datosPersona['nombre'] . "  id='Nombre' name='Nombre' pattern='([a-zA-Z]{1,20})' placeholder='Nombre...' required>";
                         echo "  <div class='invalid-feedback'>
                                     Debe ingresar un nombre.
                                 </div></div>";
 
                         echo "<div class='col-md-6'>";
                         echo "<label for='fechaNac' class='form-label'>Fecha de Nacimiento:</label>";
-                        echo "<input class='form-control' type='date' value='" . $listaPersona[0]->getFechaNac() . "' id='fechaNac' name='fechaNac' placeholder='1985-01-01' min='1925-01-01' max='2025-01-01' required>";
+                        echo "<input class='form-control' type='date' value='" . $datosPersona['fechaNacimiento'] . "' id='fechaNac' name='fechaNac' placeholder='1985-01-01' min='1925-01-01' max='2025-01-01' required>";
                         echo "  <div class='invalid-feedback'>
                                     Revise la fecha!
                                 </div></div>";
 
                         echo "<div class='col-md-6'>";
                         echo "<label for='Telefono' class='form-label'>Telefono:</label>";
-                        echo "<input class='form-control' type='text' value=" . $listaPersona[0]->getTelefono() . " id='Telefono' name='Telefono' pattern='\d{3}[-]{1}\d{7}' maxlength='11' placeholder='299-1234567' required>";
+                        echo "<input class='form-control' type='text' value=" . $datosPersona['telefono'] . " id='Telefono' name='Telefono' pattern='\d{3}[-]{1}\d{7}' maxlength='11' placeholder='299-1234567' required>";
                         echo "  <div class='invalid-feedback'>
                                     Debe ingresar codigo de area sin 0 '-' y tel sin 15!
                                 </div></div>";
 
                         echo "<div class='col-md-6'>";
                         echo "<label for='Domicilio' class='form-label'>Domicilio:</label>";
-                        echo "<input class='form-control' type='text' value=" . $listaPersona[0]->getDomicilio() . " id='Domicilio' name='Domicilio' placeholder='San Martín 123' required>";
+                        echo "<input class='form-control' type='text' value=" . $datosPersona['domicilio'] . " id='Domicilio' name='Domicilio' placeholder='San Martín 123' required>";
                         echo "  <div class='invalid-feedback'>
                                     Debe ingresar un domicilio!
                                 </div></div>";
-
 
                         echo "<div class='col-12 '>
                         <button type='submit' class='btn btn-warning me-2'>Enviar</button>

@@ -2,7 +2,77 @@
 include_once($_SESSION['ROOT'] . 'app/TP4/utils/functions.php');
 class AutoAbm
 {
+    /**
+     * Obtiene los datos de los autos y sus dueños formateados
+     * @param array|null $param
+     * @return array
+     */
+    public function obtenerDatosAutos($param = null)
+    {
+        $arrayAutos = $this->buscar($param);
+        $datosAutos = [];
 
+        if (is_array($arrayAutos) && count($arrayAutos) > 0) {
+            foreach ($arrayAutos as $auto) {
+                $persona = $auto->getPersona();
+                $datosAutos[] = [
+                    'patente' => $auto->getPatente(),
+                    'marca' => $auto->getMarca(),
+                    'modelo' => $auto->getModelo(),
+                    'duenio' => $persona->getApellido() . ' ' . $persona->getNombre()
+                ];
+            }
+        }
+
+        return $datosAutos;
+    }
+
+    /**
+     * Obtiene los datos de un auto y su dueño por patente
+     * @param string $patente
+     * @return array|null
+     */
+    public function obtenerDatosAutoPorPatente($patente)
+    {
+        $parametro['Patente'] = $patente;
+        $info = $this->buscar($parametro);
+
+        if (count($info) > 0) {
+            $autoEncontrado = $info[0];
+            $persona = $autoEncontrado->getPersona();
+            return [
+                'patente' => $autoEncontrado->getPatente(),
+                'marca' => $autoEncontrado->getMarca(),
+                'modelo' => $autoEncontrado->getModelo(),
+                'dni' => $persona->getNroDni(),
+                'apellido' => $persona->getApellido(),
+                'nombre' => $persona->getNombre()
+            ];
+        }
+
+        return null;
+    }
+    /**
+     * Obtiene los autos asociados a una persona por DNI
+     * @param string $dni
+     * @return array
+     */
+    public function obtenerAutosPorDni($dni)
+    {
+        $parametro['DniDuenio'] = $dni;
+        $info = $this->buscar($parametro);
+        $listaAutos = [];
+
+        foreach ($info as $auto) {
+            $listaAutos[] = [
+                'patente' => $auto->getPatente(),
+                'marca' => $auto->getMarca(),
+                'modelo' => $auto->getModelo()
+            ];
+        }
+
+        return $listaAutos;
+    }
     /**
      * Espera como parametro un arreglo asociativo donde las claves coinciden con los nombres 
      * de las variables instancias del objeto

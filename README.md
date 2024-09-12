@@ -1,7 +1,7 @@
 
 # PROGRAMACION WEB DINAMICA.
 
-Proyecto para la materia PWD, entrega de Trabajos practicos 1,2 y 3 desarrolladas en grupo.
+Proyecto para la materia PWD, entrega de Trabajos practicos 1, 2, 3 y 4 desarrolladas en grupo.
 
 
 ## Integrantes

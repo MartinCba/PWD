@@ -19,17 +19,14 @@
 
     // Buscar la persona por DNI
     $personaAbm = new PersonaAbm();
-    $personas = $personaAbm->buscar(['NroDni' => $dni]);
+    $datosPersona = $personaAbm->obtenerDatosPersonaPorDni($dni);
 
-    $persona = null;
     $autos = [];
 
-    if (!empty($personas)) {
-        $persona = $personas[0];
-
+    if ($datosPersona !== null) {
         // Buscar los autos asociados a la persona
         $autoAbm = new AutoAbm();
-        $autos = $autoAbm->buscar(['DniDuenio' => $dni]);
+        $autos = $autoAbm->obtenerAutosPorDni($dni);
     }
     ?>
 
@@ -42,7 +39,7 @@
                 <table class="table table-striped">
                     <thead>
                         <?php
-                        if ($persona !== null) {
+                        if ($datosPersona !== null) {
                             echo "<h4>Datos de la Persona</h4>";
                             echo "<table class='table table-striped'>";
                             echo "<thead>";
@@ -54,9 +51,9 @@
                             echo "</thead>";
                             echo "<tbody>";
                             echo "<tr>";
-                            echo "<td>" . $persona->getNombre() . "</td>";
-                            echo "<td>" . $persona->getApellido() . "</td>";
-                            echo "<td>" . $persona->getNroDni() . "</td>";
+                            echo "<td>" . $datosPersona['nombre'] . "</td>";
+                            echo "<td>" . $datosPersona['apellido'] . "</td>";
+                            echo "<td>" . $datosPersona['dni'] . "</td>";
                             echo "</tr>";
                             echo "</tbody>";
                             echo "</table>";
@@ -74,10 +71,10 @@
                                 echo '<tbody>';
                                 foreach ($autos as $auto) {
                                     echo "<tr>
-                                    <td>{$auto->getPatente()}</td>
-                                    <td>{$auto->getMarca()}</td>
-                                    <td>{$auto->getModelo()}</td>
-                                  </tr>";
+                                            <td>{$auto['patente']}</td>
+                                            <td>{$auto['marca']}</td>
+                                            <td>{$auto['modelo']}</td>
+                                        </tr>";
                                 }
                                 echo '</tbody>';
                                 echo '</table>';

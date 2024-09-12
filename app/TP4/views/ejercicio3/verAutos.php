@@ -13,10 +13,9 @@
     <?php
     include_once("../../utils/functions.php");
     include_once("../assets/structure/header.php");
-    
+
     $autoAbm = new AutoAbm();
-    $parametros = null;
-    $arrayAutos = $autoAbm->buscar($parametros);
+    $datosAutos = $autoAbm->obtenerDatosAutos();
     ?>
 
     <div class="container card-container d-flex justify-content-center align-items-center" style="height: 80vh">
@@ -24,7 +23,7 @@
             <div class="card-header">
                 <h3>Ver Autos</h3>
                 <?php
-                if (is_array($arrayAutos) && count($arrayAutos) > 0) {
+                if (is_array($datosAutos) && count($datosAutos) > 0) {
                     echo "<table class='table table-striped'>
                     <tr>
                         <th>Patente</th>
@@ -32,13 +31,12 @@
                         <th>Modelo</th>
                         <th>Dueño</th>
                     </tr>";
-                    foreach ($arrayAutos as $auto) {
-                        $persona = $auto->getPersona();
+                    foreach ($datosAutos as $auto) {
                         echo "<tr>";
-                        echo "<td>" . $auto->getPatente() . "</td>";
-                        echo "<td>" . $auto->getMarca() . "</td>";
-                        echo "<td>" . $auto->getModelo() . "</td>";
-                        echo "<td>" . $persona->getApellido() . " " . $persona->getNombre() . "</td>";
+                        echo "<td>" . $auto['patente'] . "</td>";
+                        echo "<td>" . $auto['marca'] . "</td>";
+                        echo "<td>" . $auto['modelo'] . "</td>";
+                        echo "<td>" . $auto['duenio'] . "</td>";
                         echo "</tr>";
                     }
                     echo "</table>";

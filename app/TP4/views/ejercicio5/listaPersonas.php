@@ -16,7 +16,7 @@
     
     $personaAbm = new PersonaAbm();
     // Obtener el listado de personas
-    $personas = $personaAbm->buscar(null);
+    $listaPersonas = $personaAbm->obtenerListaPersonas();
     ?>
 
     <div class="container card-container d-flex justify-content-center align-items-center" style="height: 80vh">
@@ -39,15 +39,15 @@
                     </thead>
                     <tbody>
                         <?php
-                        if (!empty($personas)) {
-                            foreach ($personas as $persona) {
+                        if (!empty($listaPersonas)) {
+                            foreach ($listaPersonas as $persona) {
                                 echo "<tr>";
-                                echo "<td>" . $persona->getNroDni() . "</td>";
-                                echo "<td>" . $persona->getApellido() . "</td>";
-                                echo "<td>" . $persona->getNombre() . "</td>";
-                                echo "<td>" . $persona->getFechaNac() . "</td>";
-                                echo "<td>" . $persona->getTelefono() . "</td>";
-                                echo "<td>" . $persona->getDomicilio() . "</td>";
+                                echo "<td>" . $persona['dni'] . "</td>";
+                                echo "<td>" . $persona['apellido'] . "</td>";
+                                echo "<td>" . $persona['nombre'] . "</td>";
+                                echo "<td>" . $persona['fechaNacimiento'] . "</td>";
+                                echo "<td>" . $persona['telefono'] . "</td>";
+                                echo "<td>" . $persona['domicilio'] . "</td>";
                                 echo "</tr>";
                             }
                         } else {

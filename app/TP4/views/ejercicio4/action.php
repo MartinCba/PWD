@@ -15,15 +15,8 @@
     include_once("../assets/structure/header.php");
 
     $datos = dataSubmitted();
-    $parametro['Patente'] = $datos['Patente'];
-    $auto = new AutoAbm();
-    $info = $auto->buscar($parametro);
-    $hayAutos = false;
-    if (count($info) > 0) {
-        $hayAutos = true;
-        $autoEncontrado = $info[0];
-        $duenio = $autoEncontrado->getPersona();
-    }
+    $autoAbm = new AutoAbm();
+    $datosAuto = $autoAbm->obtenerDatosAutoPorPatente($datos['Patente']);
     ?>
 
     <div class="container card-container d-flex justify-content-center align-items-center" style="height: 80vh">
@@ -33,11 +26,11 @@
             </div>
             <div class="card-body">
 
-                <table  class="table table-striped">
+                <table class="table table-striped">
                     <thead>
-                    <?php
-                    if ($hayAutos) {
-                        echo "
+                        <?php
+                        if ($datosAuto) {
+                            echo "
                         <tr>
                             <th>Patente</th>
                             <th>Marca</th>
@@ -46,21 +39,21 @@
                             <th>Apellido</th>
                             <th>Nombre</th>
                         </tr></thead>";
-                        echo
-                        "<tbody>
-                            <td>{$autoEncontrado->getPatente()}</td>
-                            <td>{$autoEncontrado->getMarca()}</td>
-                            <td>{$autoEncontrado->getModelo()}</td>
-                            <td>{$duenio->getNroDni()}</td>
-                            <td>{$duenio->getApellido()}</td>
-                            <td>{$duenio->getNombre()}</td> 
+                            echo
+                            "<tbody>
+                                <td>{$datosAuto['patente']}</td>
+                                <td>{$datosAuto['marca']}</td>
+                                <td>{$datosAuto['modelo']}</td>
+                                <td>{$datosAuto['dni']}</td>
+                                <td>{$datosAuto['apellido']}</td>
+                                <td>{$datosAuto['nombre']}</td> 
                         </tbody>";
-                    } else {
-                        echo "No se encontro la patente ingresada";
-                    }
-                    echo "</table>";
-                    ?>
-                <a class="btn btn-warning" href="buscarAuto.php">Volver</a>
+                        } else {
+                            echo "No se encontro la patente ingresada";
+                        }
+                        echo "</table>";
+                        ?>
+                        <a class="btn btn-warning" href="buscarAuto.php">Volver</a>
 
             </div>
         </div>

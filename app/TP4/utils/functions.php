@@ -1,4 +1,8 @@
 <?php
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
+require_once $_SESSION['ROOT'] . '/config.php';
 
 /**
  * Recopila los datos enviados por los metodos POST y GET
@@ -25,12 +29,13 @@ function dataSubmitted()
     }
     return $data;
 }
+
 spl_autoload_register(function ($class_name) {
     $tps = array(
-        $_SESSION['ROOT'] . 'TP1/',
-        $_SESSION['ROOT'] . 'TP2/',
-        $_SESSION['ROOT'] . 'TP3/',
-        $_SESSION['ROOT'] . 'TP4/'
+        $_SESSION['ROOT'] . '/app/TP1/',
+        $_SESSION['ROOT'] . '/app/TP2/',
+        $_SESSION['ROOT'] . '/app/TP3/',
+        $_SESSION['ROOT'] . '/app/TP4/',
     );
 
     $directories = array(

@@ -11,8 +11,6 @@
 
 <body>
     <?php
-    include_once("../assets/structure/header.php");
-    include_once("../../controllers/ValorNumero.php");
     include_once("../../utils/functions.php");
 
 

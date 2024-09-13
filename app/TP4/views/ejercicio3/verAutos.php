@@ -11,6 +11,7 @@
 
 <body>
     <?php
+    include_once("../../../../config.php");
     include_once("../../utils/functions.php");
     include_once("../assets/structure/header.php");
 

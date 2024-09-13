@@ -2,7 +2,12 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-require_once $_SESSION['ROOT'] . '/config.php';
+
+if (!isset($_SESSION['ROOT'])) {
+    die("Error: La variable de sesión 'ROOT' no está definida.");
+}
+
+require_once $_SESSION['ROOT'] . 'config.php';
 
 /**
  * Recopila los datos enviados por los metodos POST y GET

@@ -25,7 +25,12 @@ $(document).ready(function () {
 
     // Validar campo de Duración
     let duracion = $("#duracion").val();
-    if (duracion.length === 0 || duracion.length > 3 || isNaN(duracion)) {
+    if (
+      duracion.length === 0 ||
+      duracion.length > 3 ||
+      isNaN(duracion) ||
+      duracion < 0
+    ) {
       $("#duracion").addClass("is-invalid");
       isValid = false;
     } else {

@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <title>PWD</title>
+    <style>
+        input.is-invalid::placeholder {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
@@ -14,7 +19,7 @@
     include_once("../assets/structure/header.php");
     ?>
     <div class="container card-container d-flex justify-content-center align-items-center" style="height: 80vh">
-        <div class="card text-start bg-dark text-light" style="width: 64rem;">
+        <div class="card text-start bg-dark text-light w-100" style="max-width: 64rem;">
             <div class="card-header">
                 <h3 class="text-warning">Cinem@s</h3>
             </div>
@@ -23,55 +28,34 @@
                     <div class="col-md-6">
                         <label for="titulo" class="form-label">Título</label>
                         <input type="text" class="form-control" name="titulo" id="titulo" placeholder="Título..." required>
-                        <div class="invalid-feedback">
-                            Por favor, ingresá el título.
-                        </div>
                     </div>
                     <div class="col-md-6">
                         <label for="actores" class="form-label">Actores</label>
                         <input type="text" class="form-control" name="actores" id="actores" placeholder="Actores..." required>
-                        <div class="invalid-feedback">
-                            Por favor, ingresá los actores.
-                        </div>
                     </div>
                     <div class="col-md-6">
                         <label for="director" class="form-label">Director</label>
                         <input type="text" class="form-control" name="director" id="director" placeholder="Director..." required>
-                        <div class="invalid-feedback">
-                            Por favor, ingresá el director.
-                        </div>
                     </div>
                     <div class="col-md-6">
                         <label for="guion" class="form-label">Guion</label>
                         <input type="text" class="form-control" name="guion" id="guion" placeholder="Guion..." required>
-                        <div class="invalid-feedback">
-                            Por favor, ingresá el guion.
-                        </div>
                     </div>
                     <div class="col-md-6">
                         <label for="produccion" class="form-label">Producción</label>
                         <input type="text" class="form-control" name="produccion" id="produccion" placeholder="Producción..." required>
-                        <div class="invalid-feedback">
-                            Por favor, ingresá la producción.
-                        </div>
                     </div>
                     <div class="col-md-2">
                         <label for="anio" class="form-label">Año</label>
                         <input type="number" class="form-control" name="anio" id="anio" placeholder="Año..." required>
-                        <div class="invalid-feedback">
-                            Por favor, ingresá el año.
-                        </div>
                     </div>
                     <div class="col-md-4">
                         <label for="archivo" class="form-label">Portada</label>
-                        <input type="file" class="form-control" name="archivo" id="archivo" required>
+                        <input type="file" class="form-control" name="archivo" id="archivo"placeholder=".jpg o .png" required>
                     </div>
                     <div class="col-md-6">
                         <label for="nacionalidad" class="form-label">Nacionalidad</label>
                         <input type="text" class="form-control" name="nacionalidad" id="nacionalidad" placeholder="Nacionalidad..." required>
-                        <div class="invalid-feedback">
-                            Por favor, ingresá la nacionalidad.
-                        </div>
                     </div>
                     <div class="col-md-4">
                         <label for="genero" class="form-label">Seleccioná el genero:</label>
@@ -87,9 +71,6 @@
                     <div class="col-md-4">
                         <label for="duracion" class="form-label">Duración</label>
                         <input type="number" class="form-control" name="duracion" id="duracion" placeholder="Minutos..." required>
-                        <div class="invalid-feedback">
-                            Por favor, ingresá la duración.
-                        </div>
                     </div>
                     <div class="col-8">
                         <p>Restrincciones de edad</p>
@@ -111,9 +92,6 @@
                                 Mayores de 18 años
                             </label>
                         </div>
-                        <div class="invalid-feedback">
-                            Por favor, seleccioná la edad.
-                        </div>
                     </div>
                     <div class="mb-3">
                         <label for="sinopsis" class="form-label">Sinopsis</label>
@@ -121,7 +99,7 @@
                     </div>
                     <div class="col-12 d-flex justify-content-end">
                         <button type="submit" class="btn btn-warning me-2">Enviar</button>
-                        <button type="submit" class="btn btn-danger">Borrar</button>
+                        <button type="button" class="btn btn-danger">Borrar</button>
                     </div>
                 </form>
             </div>
